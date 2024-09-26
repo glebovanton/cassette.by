@@ -1,0 +1,47 @@
+{
+  "name": "cassette",
+  "version": "0.0.1",
+  "description": "Cassette - Музыкальная студия в Минске. +375 29 177-70-85",
+  "productName": "Cassette studio",
+  "author": "anton-glebov <anton.glebov@useinsider.com>",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "lint-fix": "eslint --fix --ext .ts,.tsx,.vue,.js,.jsx .",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.12",
+    "axios": "^1.7.7",
+    "graphql-request": "^7.1.0",
+    "quasar": "^2.16.11",
+    "uuid": "^10.0.0",
+    "video.js": "^8.17.3",
+    "vue": "^3.5.3",
+    "vue-datocms": "^7.0.5",
+    "vue-lazyload": "^3.0.0",
+    "vue-router": "^4.4.3",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "2.0.0-beta.21",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.28.0",
+    "postcss": "^8.4.45",
+    "prettier": "3.3.3",
+    "vite-plugin-checker": "^0.8.0"
+  },
+  "engines": {
+    "node": "^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

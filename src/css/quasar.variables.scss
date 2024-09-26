@@ -1,0 +1,69 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+@use 'sass:math';
+
+$spacer: 30px;
+//$primary   : #040404;
+$primary   : #fff;
+$secondary : #785025;
+$accent    : #38312a;
+
+$dark      : #1D1D1D;
+
+$positive  : #21BA45;
+$negative  : #cf9d50;
+$info      : #31CCEC;
+$warning   : #F2C037;
+
+/*---------------------------------
+  Breakpoints + Variables
+ ---------------------------------*/
+
+// Breakpoints
+// Used throughout legos; can be used by consuming projects as well
+// Or those projects can set their own breakpoints, e.g. $break--base--projectname
+// Important that consuming projects at least have access to these,
+// so they can hook into the points where the left nav hides, for example
+$break--xs: 23.4375rem; // Triggers at 375px
+$break--base: 47.9375rem; // Triggers at 767px
+$break--small: 63.75rem; // Triggers at 1020px
+$break--medium: 79.9375rem; // Triggers at 1279px
+$break--large: 100rem; // Triggers at 1600px
+$break--extra: 125rem; // Triggers at 2000px
+
+// Note: Most times you use a breakpoint mixin it should use 'at-break', please try to only
+// use 'under-break' when it avoids creating unnecessary overrides at larger breakpoints
+
+// Example: @include at-break(breakpoint-variable)
+@mixin at-break($viewportWidth) {
+  @media only screen and (min-width: $viewportWidth) {
+    @content;
+  }
+}
+// Example: @include under-break(breakpoint-variable)
+@mixin under-break($viewportWidth) {
+  @media only screen and (max-width: ($viewportWidth - 0.0625rem)) {
+    @content;
+  }
+}
+
+:export {
+  breakXs: math.div($break--xs * 16, 1rem);
+  breakBase: math.div($break--base * 16, 1rem);
+  breakSmall: math.div($break--small * 16, 1rem);
+  breakMedium: math.div($break--medium * 16, 1rem);
+  breakLarge: math.div($break--large * 16, 1rem);
+  breakExtra: math.div($break--extra * 16, 1rem);
+}
