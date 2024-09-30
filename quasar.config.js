@@ -6,6 +6,9 @@
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 import { configure } from 'quasar/wrappers';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default configure((/* ctx */) => ({
   // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
@@ -54,7 +57,9 @@ export default configure((/* ctx */) => ({
 
     // publicPath: '/',
     // analyze: true,
-    // env: {},
+    env: {
+      VUE_APP_CMS_DATOCMS_API_TOKEN: process.env.VUE_APP_CMS_DATOCMS_API_TOKEN,
+    },
     // rawDefine: {}
     // ignorePublicFolder: true,
     // minify: false,

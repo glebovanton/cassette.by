@@ -17,6 +17,7 @@
   "dependencies": {
     "@quasar/extras": "^1.16.12",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "graphql-request": "^7.1.0",
     "quasar": "^2.16.11",
     "uuid": "^10.0.0",
