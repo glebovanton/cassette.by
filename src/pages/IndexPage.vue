@@ -5,6 +5,7 @@ import {
   defineAsyncComponent,
   watch,
   onMounted,
+  nextTick,
 } from 'vue';
 import { useStore } from 'vuex';
 import { debounce } from 'lodash';
@@ -18,6 +19,7 @@ const store = useStore();
 const isInfoOpened = ref(false);
 const isContactsOpened = ref(false);
 const isOfertaOpened = ref(true);
+const pageRight = ref(null);
 
 const selectedLanguage = computed(() => store.getters['StoreCassette/selectedLanguage']);
 
@@ -28,12 +30,14 @@ const checkStorageIsOfertaOpened = () => {
   }
 };
 
-const makeDebouncedAppointment = debounce(() => {
-  const pageRight = document.querySelector('#pageRight');
-  if (pageRight) {
-    pageRight.focus();
-  }
-  isContactsOpened.value = !isContactsOpened.value;
+const makeDebouncedAppointment = debounce(async () => {
+  isContactsOpened.value = true;
+  await nextTick();
+
+  pageRight.value?.focus?.();
+
+  const el = pageRight.value?.$el?.querySelector('input, textarea, button, [tabindex]');
+  el?.focus?.();
 }, 300);
 
 const trigerOferta = () => {

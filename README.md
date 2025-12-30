@@ -36,3 +36,18 @@ quasar build -m ssr
 
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+## Deployment
+
+This project is deployed automatically using **GitHub Actions**.
+
+### Deployment flow
+
+- Every push to the **`main`** branch triggers a GitHub Actions workflow.
+- The workflow:
+  1. Checks out the repository
+  2. Sets up **Node.js v20.11.0**
+  3. Installs dependencies
+  4. Builds the Quasar SPA
+  5. Uploads the build artifacts to the production server via **FTP**
+
